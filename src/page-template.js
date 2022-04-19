@@ -1,5 +1,5 @@
 //You might remember that parentheses are unnecessary in arrow functions when there is one parameter. In this function, which has no parameters, we need parentheses to hold the place where parameters would've been.
-const generatePage = (userName, githubName) => {
+const generatePage = (name, githubName) => {
     return `
      <!DOCTYPE html>
      <html lang="en">
@@ -18,4 +18,5 @@ const generatePage = (userName, githubName) => {
     `;
     };
 
-    module.exports = generatePage; 
+
+    module.exports = generatePage;
