@@ -28,12 +28,30 @@ const promptUser = () => {
     { // 'input' will allow user to type answer to question
         type: 'input',
         name: 'name',
-        message: 'What is your name?'
+        message: 'What is your name? (REQUIRED)',
+        validate: nameInput => {
+            // true: validation passed false: validation failed, recieves prompt with same question until true
+            if (nameInput) {
+                return true;
+            } else {
+                console.log('Please enter your name!');
+                return false;
+            }
+        }
     }, 
     {
         type: 'input',
         name: 'github',
-        message: 'Enter your Github username'
+        message: 'Enter your Github username',
+        validate: githubInput => {
+            // true: validation passed false: validation failed, recieves prompt with same question until true
+            if (githubInput) {
+                return true;
+            } else {
+                console.log('Please enter your Github username!');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
@@ -57,7 +75,16 @@ const promptProject = portfolioData => {
         {
             type: 'input',
             name: 'name',
-            message: "What's the name of your project?"
+            message: "What's the name of your project?",
+            validate: projectNameInput => {
+                // true: validation passed false: validation failed, recieves prompt with same question until true
+                if (projectNameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your Project name!');
+                    return false;
+                }
+            }
         },
         {
             // list possible answers in array
@@ -65,11 +92,21 @@ const promptProject = portfolioData => {
             name: 'Languages',
             message: 'What did you build your project with? (check all that apply)',
             choices: ['Javascript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
+          
         },
         {
             type: 'input',
             name: 'link',
-            message: 'Enter the Github link to your project. (REQUIRED)'
+            message: 'Enter the Github link to your project. (REQUIRED)',
+            validate: linkInput => {
+                // true: validation passed false: validation failed, recieves prompt with same question until true
+                if (linkInput) {
+                    return true;
+                } else {
+                    console.log('Please include Github repository link!');
+                    return false;
+                }
+            }
         },
         {
             // confirm type is a boolean, can recieve yes or no(true or false) responses
