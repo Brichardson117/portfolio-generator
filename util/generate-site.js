@@ -1,6 +1,5 @@
 const { ok } = require('assert');
 const fs = require('fs');
-const { writeFile } = require('fs');
 const { reject } = require('lodash');
 
 const writeFile = fileContent => {

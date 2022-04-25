@@ -2,7 +2,7 @@
 
 //This will import the exported object from generate-site.js, allowing us to use generateSite.writeFile() and generateSite.copyFile().
 //Because we exported an object from generate-site.js, we can use object destructuring to create variables out of those properties instead of having to use dot notation! 
-const {writeFile, copyFile} = require('./utils/generate-site.js');
+const {writeFile, copyFile} = require('./util/generate-site.js');
 const inquirer = require('inquirer');
 const generatePage = require('./src/page-template');
 
